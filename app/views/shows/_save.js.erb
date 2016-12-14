@@ -1,0 +1,11 @@
+$("ul.errors").html("");
+<% if @show.errors.any? %>
+  <% @show.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"));
+    alert("Saucisse");
+  <% end %>
+<% else %>
+  $(".show-list").html("<%= escape_javascript(render 'index') %>");
+  $(".show-show").html("<%= escape_javascript(render 'show') %>");
+  $("#show-modal").modal("hide");
+<% end %>

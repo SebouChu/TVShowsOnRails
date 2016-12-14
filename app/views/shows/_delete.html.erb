@@ -1,0 +1,16 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">New TV Show</h3>
+        </div>
+        <div class="modal-body">
+            <ul class="errors"></ul>
+            Are you sure you wish to delete
+            <b><%= @show.title %></b>?
+        </div>
+        <div class="modal-footer">
+            <%= link_to "Yes, delete this show", show_path(@show), method: :delete, remote: true, class: "btn btn-danger" %>
+            <%= link_to "No, please don't", "#", class: "btn btn-default", data: { dismiss: "modal" } %>
+        </div>
+    </div>
+</div>

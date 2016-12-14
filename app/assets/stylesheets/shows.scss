@@ -1,0 +1,65 @@
+// Place all the styles related to the Shows controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+header {
+  color: #ddd;
+}
+
+#connected-as {
+  padding: 10px;
+  margin: 5px;
+  border-left: 1px solid #bbb;
+}
+
+.navbar-brand {
+  font-size: 20px;
+  font-family: "Kaushan Script", cursive;
+}
+
+html, body {
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -140px;
+  padding: 0 0 180px;
+}
+
+#footer {
+  height: 140px;
+  background-color: #f5f5f5;
+  vertical-align: middle;
+
+  .container {
+    text-align: center;
+    padding: 20px 0 0 0;
+
+    #github-link {
+      width: 64px;
+      height: 64px;
+      display: inline-block;
+      border-radius: 100%;
+      background-image: url('github.png');
+      opacity: 0.3;
+
+      &:hover {
+        opacity: 1;
+        transition: 0.5s;
+      }
+    }
+  }
+}
+
+.add-btn {
+  margin-right: 10px;
+  margin-bottom: 25px;
+}
+
+.small-hr {
+  width: 30em;
+  margin-left: 0;
+  border-color: #ccc;
+}

@@ -1,0 +1,8 @@
+<%= link_to "Add a TV show", new_show_path, remote: true, class: "btn btn-lg btn-primary add-btn" %>
+<div class="new-show"></div>
+<div id="ajaxed-div">
+</div>
+<div class="show-list">
+  <%= render 'index' %>
+</div>
+<div id="show-modal" class="modal fade"></div>
