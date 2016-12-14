@@ -8,20 +8,28 @@
 
 Show.delete_all
 User.delete_all
+Comment.delete_all
 
 user1 = User.new
+user1.first_name = "Sébastien"
+user1.last_name = "Gaya"
 user1.email = 'admin@admin.com'
 user1.password = 'adminpass123'
 user1.password_confirmation = 'adminpass123'
 user1.save!
 
 user2 = User.new
+user2.first_name = "John"
+user2.last_name = "Smith"
 user2.email = "user@user.com"
 user2.password = "userpass123"
 user2.password_confirmation = "userpass123"
 user2.save!
 
-show1 = Show.create(title: "The Flash", plot: "Barry Allen is struck by lightning and become The Flash.")
+show1 = Show.create(title: "The Flash", plot: "After being struck by lightning, Barry Allen become The Flash and protects his city from meta-humans threats.")
 show2 = Show.create(title: "Marvel's Agents of S.H.I.E.L.D.", plot: "The adventures of an elite team which protects the Earth from alien threats.")
 show1.users << user1
 show2.users << user2
+
+comment1 = Comment.create(comment: "Ma série préférée !", user_id: user1.id, show_id: show1.id)
+comment2 = Comment.create(comment: "Je vous la recommande !", user_id: user2.id, show_id: show2.id)

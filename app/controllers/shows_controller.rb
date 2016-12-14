@@ -9,8 +9,10 @@ class ShowsController < ApplicationController
   def show
     @my_shows = current_user.shows.order("title ASC")
     @other_shows = Show.all.order("title ASC") - current_user.shows
+    @comment = Comment.new
 
     @show = Show.find(params[:id])
+    @comments = @show.comments.order("created_at ASC")
   end
 
   def new
@@ -23,6 +25,8 @@ class ShowsController < ApplicationController
     @show = Show.find(params[:id])
     @my_shows = current_user.shows.order("title ASC")
     @other_shows = Show.all.order("title ASC") - current_user.shows
+    @comments = @show.comments.order("created_at ASC")
+    @comment = Comment.new
   end
 
   def create
@@ -31,6 +35,7 @@ class ShowsController < ApplicationController
     @show_notice = "TV show created successfully."
     @my_shows = current_user.shows.order("title ASC")
     @other_shows = Show.all.order("title ASC") - current_user.shows
+    @comments = @show.comments.order("created_at ASC")
   end
 
   def update
@@ -39,12 +44,16 @@ class ShowsController < ApplicationController
     @show_notice = "TV show updated successfully."
     @my_shows = current_user.shows.order("title ASC")
     @other_shows = Show.all.order("title ASC") - current_user.shows
+    @comments = @show.comments.order("created_at ASC")
+    @comment = Comment.new
   end
 
   def delete
     @show = Show.find(params[:show_id])
     @my_shows = current_user.shows.order("title ASC")
     @other_shows = Show.all.order("title ASC") - current_user.shows
+    @comments = @show.comments.order("created_at ASC")
+    @comment = Comment.new
   end
 
   def destroy
@@ -53,6 +62,8 @@ class ShowsController < ApplicationController
     @show_notice = "TV show deleted successfully."
     @my_shows = current_user.shows.order("title ASC")
     @other_shows = Show.all.order("title ASC") - current_user.shows
+    @comments = @show.comments.order("created_at ASC")
+    @comment = Comment.new
   end
 
   def add
@@ -61,6 +72,8 @@ class ShowsController < ApplicationController
     @show_notice = "TV show added successfully."
     @my_shows = current_user.shows.order("title ASC")
     @other_shows = Show.all.order("title ASC") - current_user.shows
+    @comments = @show.comments.order("created_at ASC")
+    @comment = Comment.new
   end
 
   private

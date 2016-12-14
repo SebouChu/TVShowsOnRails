@@ -1,0 +1,16 @@
+<%= form_for @comment, url: show_comments_path(@show), remote: true, html: { style: "display:inline;" } do |f| %>
+    <ul class="errors"></ul>
+
+    <div class="form-group">
+        <%= f.label :comment, "Your comment", class:"control-label", required: true %>
+        <% if !current_user.shows.exists?(@show) %>
+        <%= f.text_area :comment, class: "form-control", disabled: true, value: "You can't comment a TV show which is not in your shows.", required: true %>
+    </div>
+        <% else %>
+        <%= f.text_area :comment, class: "form-control", required: true, value: "" %>
+        <%= f.number_field :user_id, type: "hidden", value: current_user.id %>
+        <%= f.number_field :show_id, type: "hidden", value: @show.id %>
+    </div>
+  <%= f.submit class: "btn btn-primary" %>
+        <% end %>
+<% end %>

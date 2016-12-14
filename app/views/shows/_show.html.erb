@@ -3,8 +3,13 @@
 <p><%= @show.plot %></p><br>
 <% if @my_shows.include?(@show) %>
 <%= link_to "Edit", edit_show_path(@show), remote: true, class: "btn btn-lg btn-warning add-btn" %>
-<%= link_to "Delete", show_path(@show), remote: true, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-lg btn-danger add-btn" %>
+<%= link_to "Delete", show_delete_path(@show), remote: true, class: "btn btn-lg btn-danger add-btn" %>
 <% else %>
 <%= link_to "Add", show_add_path(@show), remote: true, class: "btn btn-lg btn-primary add-btn" %>
 <% end %>
+
+<div class="comment-list">
+  <%= render 'comments/index' %>
+</div>
+
 <%= link_to "Back to Home", root_path, class: "btn btn-lg btn-primary add-btn" %>

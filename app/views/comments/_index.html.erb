@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Commentaires</h3>
+    </div>
+    <div class="panel-body">
+      <div id="notice"><%= @notice %></div>
+      <% @comments.each do |comment| %>
+        <div class="comment">
+          <div class="well">
+            <%= link_to show_comment_delete_path(@show, comment), remote: true, class: "close" do %>
+              <span aria-hidden="true">&times;</span>
+            <% end %>
+            <p><%= comment.comment %></p>
+            <p><i>a dit <%= comment.user.first_name + " " + comment.user.last_name %>, le <%= comment.created_at.strftime("%-d/%-m/%Y à %Hh%M") %> :</i></p>
+          </div>
+        </div>
+      <% end %>
+      <div class="comment-form">
+        <%= render 'comments/form' %>
+      </div>
+    </div>
+</div>
