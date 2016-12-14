@@ -3,7 +3,9 @@
         <h3 class="panel-title">Comments</h3>
     </div>
     <div class="panel-body">
-      <div id="notice"><%= @notice %></div>
+      <div id="comment-notice">
+        <%= @notice %>
+      </div>
       <% @comments.each do |comment| %>
         <div class="comment">
           <div class="well">
@@ -15,6 +17,7 @@
           </div>
         </div>
       <% end %>
+      <hr>
       <div class="comment-form">
         <%= render 'comments/form' %>
       </div>
