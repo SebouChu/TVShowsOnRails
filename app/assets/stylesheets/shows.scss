@@ -65,7 +65,7 @@ header {
 }
 
 
-.add-btn {
+.new-btn {
   margin-right: 10px;
   margin-bottom: 25px;
 }
@@ -99,10 +99,14 @@ show-show img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 350px;
+  flex-wrap: wrap;
   background-color: #ddd;
   border-radius: 20px;
   padding: 10px;
+}
+
+#poster {
+  margin-bottom: 20px;
 }
 
 #small-btns {
@@ -126,11 +130,21 @@ show-show img {
   height: 32px;
 }
 
+.add-btn {
+  width: 28px;
+  height: 28px;
+}
+
 .form-current-poster {
   margin-bottom: 20px;
-  
+
   img, p {
     display: inline-block;
     vertical-align: middle;
   }
+}
+
+#index-big-hr {
+  border-color: #aaa;
+  border-style: dotted;
 }

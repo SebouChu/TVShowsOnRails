@@ -15,6 +15,7 @@
             <% end %>
         </div>
         <div id="show-btns">
+            <p><%= my_show.title %></p>
             <div id="small-btns">
               <%= link_to edit_show_path(my_show), remote: true do %>
               <%= image_tag "edit.svg", class: "small-btn" %>
@@ -28,6 +29,8 @@
     </div>
     <% end %>
 </div>
+
+<hr id="index-big-hr">
 
 <h1>Other Shows</h1>
 <hr class="small-hr">
@@ -43,9 +46,10 @@
           <% end %>
         </div>
         <div id="show-btns">
+            <p><%= other_show.title %></p>
             <div id="small-btns">
               <%= link_to show_add_path(other_show), remote: true do %>
-              <%= image_tag "add.svg", class: "small-btn" %>
+              <%= image_tag "add.svg", class: "small-btn add-btn" %>
               <% end %>
             </div>
             <%= link_to "Learn more", show_path(other_show), class: "btn btn-lg btn-success btn-more" %>
