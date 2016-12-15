@@ -8,7 +8,11 @@
     <% @my_shows.each do |my_show| %>
     <div class="show-container">
         <div id="poster">
+            <% if my_show.poster.file? %>
             <%= image_tag my_show.poster.url(:thumb) %>
+            <% else %>
+            <%= image_tag "https://s3-eu-west-1.amazonaws.com/tvshowsonrails/no-poster-small.png" %>
+            <% end %>
         </div>
         <div id="show-btns">
             <div id="small-btns">
@@ -32,7 +36,11 @@
     <% @other_shows.each do |other_show| %>
     <div class="show-container">
         <div id="poster">
-            <%= image_tag other_show.poster.url(:thumb) %>
+          <% if other_show.poster.file? %>
+          <%= image_tag other_show.poster.url(:thumb) %>
+          <% else %>
+          <%= image_tag "https://s3-eu-west-1.amazonaws.com/tvshowsonrails/no-poster-small.png" %>
+          <% end %>
         </div>
         <div id="show-btns">
             <div id="small-btns">
