@@ -19,7 +19,7 @@
             <ul class="nav navbar-nav">
               <li><%= link_to "Shows", root_path %></li>
               <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-              <li id="connected-as">Connecté en tant que<%= link_to current_user.first_name + " " + current_user.last_name + " (" + current_user.email + ")", edit_user_registration_path(current_user) %></li>
+              <li id="connected-as">Connected as<%= link_to current_user.first_name + " " + current_user.last_name + " (" + current_user.email + ")", edit_user_registration_path(current_user) %></li>
             </ul>
           </div>
           <% end %>
@@ -36,7 +36,7 @@
     </div>
     <footer id="footer">
       <div class="container">
-        <p>Développement par Sébastien Gaya</p>
+        <p>Developed by Sébastien Gaya</p>
         <a id="github-link" href="https://github.com/SebouChu/TVShowsOnRails"></a>
       </div>
     </footer>

@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+  skip_before_filter :verify_authenticity_token
 
   def new
     @comment = Comment.new
@@ -33,8 +34,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
     if @comment.user == current_user
-      @comment = Comment.find(params[:id])
       @comment.destroy
     else
       @notice = "You can't delete someone else's comment."

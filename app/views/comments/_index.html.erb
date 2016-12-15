@@ -6,6 +6,9 @@
       <div id="comment-notice">
         <%= @notice %>
       </div>
+      <% if @comments.empty? %>
+        <p>No comments yet... :(</p>
+      <% end %>
       <% @comments.each do |comment| %>
         <div class="comment">
           <div class="well">

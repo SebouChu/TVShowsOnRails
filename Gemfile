@@ -33,6 +33,7 @@ gem 'bootstrap-sass', '~> 3.3.5.1'
 # Paperclip & AWS
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
+gem 'remotipart', '~> 1.2'
 
 # Devise
 gem 'devise'
