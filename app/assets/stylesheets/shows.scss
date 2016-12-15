@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+html, body {
+  height: 100%;
+}
+
 header {
   color: #ddd;
 }
@@ -21,9 +25,6 @@ header {
   font-family: "Kaushan Script", cursive;
 }
 
-html, body {
-  height: 100%;
-}
 
 #wrap {
   min-height: 100%;
@@ -57,23 +58,21 @@ html, body {
   }
 }
 
-.add-btn {
-  margin-right: 10px;
-  margin-bottom: 25px;
-}
-
 .small-hr {
   width: 30em;
   margin-left: 0;
   border-color: #ccc;
 }
 
-textarea.form-control {
-  height: 6em;
+
+.add-btn {
+  margin-right: 10px;
+  margin-bottom: 25px;
 }
 
-show-show img {
-  float: right;
+
+textarea.form-control {
+  height: 6em;
 }
 
 #show-content {
@@ -81,4 +80,57 @@ show-show img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+show-show img {
+  float: right;
+}
+
+
+.my-shows, .other_shows {
+  display: flex;
+  justify-content: center;
+}
+
+.show-container {
+  position: relative;
+  margin: 0 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 350px;
+  background-color: #ddd;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+#small-btns {
+  margin: 10px 0;
+
+  a {
+    text-decoration: none;
+
+    img {
+      opacity: 0.4;
+      &:hover {
+        opacity: 1;
+        transition: .25s;
+      }
+    }
+  }
+}
+
+.small-btn {
+  width: 32px;
+  height: 32px;
+}
+
+.form-current-poster {
+  margin-bottom: 20px;
+  
+  img, p {
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
