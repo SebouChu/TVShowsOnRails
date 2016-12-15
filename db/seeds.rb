@@ -26,8 +26,8 @@ user2.password = "userpass123"
 user2.password_confirmation = "userpass123"
 user2.save!
 
-show1 = Show.create(title: "The Flash", plot: "After being struck by lightning, Barry Allen become The Flash and protects his city from meta-humans threats.")
-show2 = Show.create(title: "Marvel's Agents of S.H.I.E.L.D.", plot: "The adventures of an elite team which protects the Earth from alien threats.")
+show1 = Show.create(title: "The Flash", plot: "After being struck by lightning, Barry Allen become The Flash and protects his city from meta-humans threats.", poster: File.new("#{Rails.root}/app/assets/images/the-flash.jpg"))
+show2 = Show.create(title: "Marvel's Agents of S.H.I.E.L.D.", plot: "The adventures of an elite team which protects the Earth from alien threats.", poster: File.new("#{Rails.root}/app/assets/images/shield.jpg"))
 show1.users << user1
 show2.users << user2
 
