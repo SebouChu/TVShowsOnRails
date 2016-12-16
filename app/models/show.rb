@@ -12,5 +12,5 @@ class Show < ApplicationRecord
   }
 
   validates_attachment_content_type :poster, :content_type => /\Aimage\/.*\Z/
-  validates_attachment_size :poster, :less_than => 2.megabytes
+  validates_attachment_size :poster, :less_than => 4.megabytes
 end
