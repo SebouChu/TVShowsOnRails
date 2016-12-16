@@ -16,8 +16,12 @@
         <% if @show.poster.file? %>
         <div class="form-current-poster">
           <%= image_tag @show.poster.url(:tiny) %>
-          <p>Current poster</p>
+          <div id="aside-poster-form">
+            <p>Current poster</p>
+          </div>
         </div>
+        <% else %>
+        <p>No poster yet... :(</p>
         <% end %>
         <%= f.file_field :poster, class: "form-control" %>
     </div>
