@@ -14,7 +14,7 @@
       <%= f.label :poster, "Poster", class: "control-label" %>
       <i>(Max. size : 4MB)</i>
         <% if @show.poster.file? %>
-        <div class="form-current-poster">
+        <div class="form-current-pic">
           <%= image_tag @show.poster.url(:tiny) %>
           <div id="aside-poster-form">
             <p>Current poster</p>

@@ -34,7 +34,7 @@
   <div class="field">
     <%= f.label :avatar %><br>
     <% if current_user.avatar.file? %>
-    <%= image_tag current_user.avatar.url %>
+    <%= image_tag current_user.avatar.url(:medium), class: "form-current-pic" %>
     <% else %>
     <p>No avatar yet... :(</p>
     <% end %>

@@ -20,7 +20,7 @@
                 <% if comment.user.avatar.file? %>
                 <%= image_tag comment.user.avatar.url(:thumb), alt: comment.user.first_name + " " + comment.user.last_name + "'s avatar" %>
                 <% else %>
-                <%= image_tag "#" %>
+                <%= image_tag "https://s3-eu-west-1.amazonaws.com/tvshowsonrails/user.svg", class: "default-avatar-comment" %>
                 <% end %>
               </div>
               <div class="comment-txt">

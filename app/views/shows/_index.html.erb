@@ -4,6 +4,9 @@
 <h1>My Shows</h1>
 <hr class="small-hr">
 
+<% if @my_shows.empty? %>
+  <p>Your library is empty. :(</p>
+<% end %>
 <div class="my-shows">
     <% @my_shows.each do |my_show| %>
     <div class="show-container">
@@ -35,6 +38,9 @@
 <h1>Other Shows</h1>
 <hr class="small-hr">
 
+<% if @other_shows.empty? %>
+  <p>You added all the shows ! :D</p>
+<% end %>
 <div class="other_shows">
     <% @other_shows.each do |other_show| %>
     <div class="show-container">

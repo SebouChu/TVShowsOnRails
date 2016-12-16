@@ -12,8 +12,16 @@ header {
 
 #avatar-header {
   margin: 6px 0;
+  a {
+    padding: 0;
+  }
   img {
-    border: 2px solid grey;
+    width: 36px;
+    height: 36px;
+
+    &#custom-avatar {
+      border: 2px solid grey;
+    }
   }
 }
 
@@ -142,7 +150,7 @@ show-show img {
   height: 28px;
 }
 
-.form-current-poster {
+.form-current-pic {
   margin-bottom: 20px;
 
   img, #aside-poster-form {
@@ -154,4 +162,9 @@ show-show img {
 #index-big-hr {
   border-color: #aaa;
   border-style: dotted;
+}
+
+.default-avatar-comment {
+  width: 64px;
+  height: 64px;
 }

@@ -22,9 +22,9 @@
               <li id="connected-as">Connected as<%= link_to current_user.first_name + " " + current_user.last_name + " (" + current_user.email + ")", edit_user_registration_path(current_user) %></li>
               <li id="avatar-header">
                 <% if current_user.avatar.file? %>
-                <%= image_tag current_user.avatar.url(:tiny) %>
+                <%= link_to image_tag(current_user.avatar.url(:tiny), id: "custom-avatar"), edit_user_registration_path(current_user) %>
                 <% else %>
-                <%= image_tag "#" %>
+                <%= link_to image_tag("https://s3-eu-west-1.amazonaws.com/tvshowsonrails/user.svg"), edit_user_registration_path(current_user) %>
                 <% end %>
               </li>
             </ul>
