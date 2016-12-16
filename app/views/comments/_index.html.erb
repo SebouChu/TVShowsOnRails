@@ -15,8 +15,21 @@
             <%= link_to show_comment_delete_path(@show, comment), remote: true, class: "close" do %>
               <span aria-hidden="true">&times;</span>
             <% end %>
-            <p><%= comment.comment %></p>
-            <p><i>a dit <%= comment.user.first_name + " " + comment.user.last_name %>, le <%= comment.created_at.strftime("%-d/%-m/%Y à %Hh%M") %> :</i></p>
+            <div class="comment-content">
+              <div class="comment-avatar">
+                <% if comment.user.avatar.file? %>
+                <%= image_tag comment.user.avatar.url(:thumb), alt: comment.user.first_name + " " + comment.user.last_name + "'s avatar" %>
+                <% else %>
+                <%= image_tag "#" %>
+                <% end %>
+              </div>
+              <div class="comment-txt">
+                <p><%= comment.comment %></p>
+              </div>
+            </div>
+            <div class="comment-footer">
+              <p><i>a dit <%= comment.user.first_name + " " + comment.user.last_name %>, le <%= comment.created_at.strftime("%-d/%-m/%Y à %Hh%M") %> :</i></p>
+            </div>
           </div>
         </div>
       <% end %>

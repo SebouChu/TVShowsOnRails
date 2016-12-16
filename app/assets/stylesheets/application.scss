@@ -14,3 +14,18 @@
 
  @import "bootstrap";
  @import "shows.scss";
+
+ #img_prev {
+   display: none;
+   margin-bottom: 15px;
+ }
+
+
+.comment-avatar {
+  float: left;
+  margin-right: 10px;
+}
+
+ .comment-txt {
+   word-break: break-all;
+ }

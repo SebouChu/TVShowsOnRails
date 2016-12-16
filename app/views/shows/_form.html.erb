@@ -23,7 +23,8 @@
         <% else %>
         <p>No poster yet... :(</p>
         <% end %>
-        <%= f.file_field :poster, class: "form-control" %>
+        <%= f.file_field :poster, class: "form-control", onchange: "readURL(this)" %><br>
+        <%= image_tag "#", alt: "Poster Preview", id: "img_prev" %>
     </div>
 </div>
 <div class="modal-footer">
