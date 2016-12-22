@@ -105,11 +105,12 @@ show-show img {
 .my-shows, .other_shows {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .show-container {
   position: relative;
-  margin: 0 20px;
+  margin: 10px 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
