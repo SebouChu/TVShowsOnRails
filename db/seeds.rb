@@ -17,6 +17,8 @@ user1.email = 'admin@admin.com'
 user1.password = 'adminpass123'
 user1.password_confirmation = 'adminpass123'
 user1.save!
+user1.admin = true
+user1.save
 
 user2 = User.new
 user2.first_name = "John"

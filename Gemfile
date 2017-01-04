@@ -38,6 +38,9 @@ gem 'remotipart', '~> 1.2'
 # Devise
 gem 'devise'
 
+# Rails Admin
+gem 'rails_admin', '~> 1.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -32,6 +32,9 @@
           <div id="navbar navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li><%= link_to "Shows", root_path %></li>
+              <% if current_user.admin %>
+              <li><%= link_to "Admin", rails_admin_path %></li>
+              <% end %>
               <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
               <li id="connected-as">Connected as<%= link_to current_user.first_name + " " + current_user.last_name + " (" + current_user.email + ")", edit_user_registration_path(current_user) %></li>
               <li id="avatar-header">
