@@ -94,6 +94,7 @@ textarea.form-control {
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap-reverse;
   align-items: center;
 }
 
@@ -168,4 +169,63 @@ show-show img {
 .default-avatar-comment {
   width: 64px;
   height: 64px;
+}
+
+@media screen and (max-width:1000px) {
+  html, body, #wrap, .container {
+    width: 100%;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  nav ul {
+    display: block;
+    padding: 0;
+  }
+
+  .navbar-nav {
+    display: inline-block;
+    float: none;
+    margin: 0 auto;
+  }
+
+  .navbar-brand {
+    display: block;
+    float: none;
+  }
+
+  .small-hr {
+    width: 40%;
+    margin: 1em auto;
+  }
+
+  .show-container {
+    width: 12em;
+  }
+
+  #show-content {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width:767px) {
+  #connected-as {
+    border-left: none;
+    border-top: 1px solid #444;
+  }
+
+
+  .nav {
+    border-top: 1px solid #444;
+    & > li > a {
+      padding: 10px 0;
+    }
+
+    & > li#connected-as > a {
+      padding: 10px 5px;
+    }
+  }
 }
