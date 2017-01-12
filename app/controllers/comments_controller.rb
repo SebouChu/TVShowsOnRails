@@ -35,7 +35,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    if @comment.user == current_user
+    if @comment.user == current_user || (current_user && current_user.admin)
       @comment.destroy
     else
       @notice = "You can't delete someone else's comment."

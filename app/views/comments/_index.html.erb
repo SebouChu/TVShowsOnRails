@@ -12,8 +12,10 @@
       <% @comments.each do |comment| %>
         <div class="comment">
           <div class="well">
-            <%= link_to show_comment_delete_path(@show, comment), remote: true, class: "close" do %>
-              <span aria-hidden="true">&times;</span>
+            <% if comment.user == current_user || (current_user && current_user.admin) %>
+              <%= link_to show_comment_delete_path(@show, comment), remote: true, class: "close" do %>
+                <span aria-hidden="true">&times;</span>
+              <% end %>
             <% end %>
             <div class="comment-content">
               <div class="comment-avatar">
